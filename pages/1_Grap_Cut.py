@@ -4,6 +4,7 @@ import numpy as np
 from PIL import Image
 from streamlit_drawable_canvas import st_canvas
 
+@st.cache_data
 # Hàm thực hiện GrabCut để tách nền ảnh
 def grabcut_process(image, rect):
     mask = np.zeros(image.shape[:2], np.uint8)
