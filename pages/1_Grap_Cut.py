@@ -26,7 +26,7 @@ def resize_image(image, target_width):
     return resized_image
 
 # Tạo giao diện Streamlit
-st.title("Grabcut Algorithm")
+st.title("GrabCut Algorithm")
 st.markdown("""
 - Add an image
 - Draw a rectangle around the area to extract
@@ -61,13 +61,13 @@ if uploaded_file is not None:
     if canvas_result.json_data is not None:
         for obj in canvas_result.json_data["objects"]:
             if obj["type"] == "rect":
-                # Lấy toạ độ của hình chữ nhật mà người dùng đã vẽ
+                # Lấy tọa độ của hình chữ nhật mà người dùng đã vẽ
                 left = int(obj["left"])
                 top = int(obj["top"])
                 width = int(obj["width"])
                 height = int(obj["height"])
 
-                # Chuyển đổi toạ độ hình chữ nhật về ảnh gốc
+                # Chuyển đổi tọa độ hình chữ nhật về ảnh gốc
                 scale_x = image.shape[1] / resized_image.shape[1]
                 scale_y = image.shape[0] / resized_image.shape[0]
 
@@ -81,5 +81,6 @@ if uploaded_file is not None:
 
                     # Nút tải ảnh kết quả
                     result_image = Image.fromarray(result)
-                    result_image_bytes = result_image.tobytes()
-                    st.download_button("Download Result", data=result_image_bytes, file_name="result.png", mime="image/png")
+                    buffered = BytesIO()
+                    result_image.save(buffered, format="PNG")
+                    st.download_button("Download Result", data=buffered.getvalue(), file_name="result.png", mime="image/png")
