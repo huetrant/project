@@ -18,7 +18,7 @@ st.image(image_path1, caption='Biển số 1', width=700)
 st.image(image_path2, caption='Biển số 2', width=700)
 
 st.subheader("1.2. Thiết lập thí nghiệm")
-st.markdown("<h3 style='font-size: 25px; color: #000000;'>Bộ tham số:</h3>", unsafe_allow_html=True)
+st.subheader("Bộ tham số:")
 st.markdown("""
 - Kernel size: [3, 5, 7]
 - Dist transform threshold: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8]
