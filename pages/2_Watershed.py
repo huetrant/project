@@ -18,27 +18,27 @@ st.image(image_path1, caption='Biển số 1', width=700)
 st.image(image_path2, caption='Biển số 2', width=700)
 
 st.subheader("1.2. Thiết lập thí nghiệm")
-st.markdown("<h3 style='font-size: 25px; color: #FFFFFF;'>Bộ tham số:</h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='font-size: 25px; color: #000000;'>Bộ tham số:</h3>", unsafe_allow_html=True)
 st.markdown("""
 - Kernel size: [3, 5, 7]
 - Dist transform threshold: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8]
 """)
-st.markdown("<h3 style='font-size: 25px; color: #FFFFFF;'>Quá trình thí nghiệm: </h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='font-size: 25px; color: #000000;'>Quá trình thí nghiệm: </h3>", unsafe_allow_html=True)
 
 pipeline_path = "./images/output/popeline.png"
 st.image(pipeline_path, caption='Pipeline', width=1000)
 
-st.markdown("<h3 style='font-size: 25px; color: #FFFFFF;'>Độ đo: </h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='font-size: 25px; color: #000000;'>Độ đo: </h3>", unsafe_allow_html=True)
 
 IOU_path = "./images/output/IoU.webp"
 st.image(IOU_path, caption='Công thức tính IoU', width=700)
 
-st.markdown("<h3 style='font-size: 25px; color: #FFFFFF;'>Kết quả: </h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='font-size: 25px; color: #000000;'>Kết quả: </h3>", unsafe_allow_html=True)
 
 bd_path = "./images/output/bd.png"
 st.image(bd_path, caption='Biểu đồ kết quả tính IoU theo bộ tham số', width=1000)
 
-st.markdown("<h3 style='font-size: 25px; color: #FFFFFF;'>Minh họa: </h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='font-size: 25px; color: #000000;'>Minh họa: </h3>", unsafe_allow_html=True)
 
 mask30 = "./images/output/1xemay356_mask5-03.png"
 st.image(mask30, caption='Mask với Kernel size = 5, Threshold = 0.3', width=700)
